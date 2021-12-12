@@ -6,5 +6,6 @@ ARG GID=1000
 RUN addgroup mnamer -g $GID \
     && adduser mnamer -u $UID -G mnamer --disabled-password \
     && pip3 install --no-cache-dir --upgrade pip mnamer==${MNAMER_VERSION}
-USER mnamer
+#USER mnamer
 ENTRYPOINT ["python", "-m", "mnamer"]
+CMD ["--batch", "/mnt"]
