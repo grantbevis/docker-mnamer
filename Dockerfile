@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.9-alpine
 MAINTAINER b3vis
 ARG MNAMER_VERSION=2.5.2
 ARG UID=1000
