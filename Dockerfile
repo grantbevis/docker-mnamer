@@ -1,9 +1,10 @@
-FROM alpine:latest
+FROM python:alpine
 MAINTAINER b3vis
-ARG MNAMER_VERSION=v2.2.0
-RUN apk upgrade --no-cache \
-    && apk add --no-cache \
-    python3 \
-    && pip3 install --upgrade pip \
-    && pip3 install --upgrade mnamer==${MNAMER_VERSION}
-CMD /usr/bin/mnamer
+ARG MNAMER_VERSION=v2.5.2
+ARG UID=1000
+ARG GID=1000
+RUN addgroup mnamer -g $GID \
+    && adduser mnamer -u $UID -G mnamer --disabled-password \
+    && pip3 install --no-cache-dir --upgrade pip mnamer==${MNAMER_VERSION} \
+USER mnamer
+ENTRYPOINT ["python", "-m", "mnamer"]
