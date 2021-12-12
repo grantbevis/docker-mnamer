@@ -1,6 +1,6 @@
 # mnamer Container
 <img src="https://github.com/jkwill87/mnamer/raw/master/assets/logo.png" width=200px>
-
+[![build images](https://github.com/b3vis/docker-mnamer/actions/workflows/build_latest.yml/badge.svg)](https://github.com/b3vis/docker-mnamer/actions/workflows/build_latest.yml)
 ### Description
 
 A little container I wrote to package [mnamer](https://github.com/jkwill87/mnamer) in docker
